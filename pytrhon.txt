@@ -1,0 +1,156 @@
+<p>Python is an open source language that is getting a lot of attention from the 
+market. It combines ease of use with the capability to run on multiple platforms
+because it is implemented focusing on every major operating system.</p>
+ <p>Guido van Rossum created the language nearly 11 years ago and since then, 
+ Python has changed through the years, turning itself into one of the most
+  powerful programming languages currently available.</P>
+  <p> Python is a good prototype language. In just a few minutes, you can develop
+prototypes that would take you several hours in other languages.</P>
+<p> It also embodies all object-oriented concepts as part of its core engine.
+  Therefore, creating programming object-oriented applications in Python is
+   much easier than it would be in other languages such as Java or C++.</p>
+<p>As I just said, Python is an open source project. Consequently,
+ it is truly free. No copylefts or copyrights are involved in its 
+ license agreement. You can change it, modify it, give it away, sell it,
+ and even freely distribute it for commercial use. Its copyright only protects
+  the author from legal problems that might occur if someone decides to sue
+the author for errors caused by using Python, or if someone else tries to
+claim ownership of the language. Maybe you still don't know Python,
+ but many companies are out there using it. The problem is these companies
+ don't want to go public talking about it because they think that using Python
+  without getting the attention of their competitors is a good strategy.</p>
+Okay, I know that you are curious to know who in the world is using Python.
+Organizations like Industrial Light and Magic, Yahoo!, Red Hat, 
+and NASA are some of companies that run Python applications.</p>
+
+
+
+
+<p>Built-in data types are types that are already built into the interpreter.
+ They are divided into two groups:</p>
+ <p> Immutable Data Types These objects cannot have their values altered 
+ (for example, strings, numbers, and tuples). 
+ Mutable Data Types These objects can have their values manipulated 
+ (for example, lists and dictionaries). Sometimes, it becomes necessary 
+ to assign a null  value to a variable using the special data type known 
+ as None:</p>
+ <code>  >>> x = 1 >>> x 1 >>> print x 1 >>> x = None >>> x >>></code>
+ <p> As you could see, nothing was returned. However, if you try to print this 
+ value, the print  method of the object will specially handle the None  
+ value by returning a None  result. This is shown in the following:</p>
+ <code> >>> print x None</code>
+
+
+ <p>Python considers a string as a sequence of characters. 
+ Therefore, every time you use, for example, the string "Parrot", 
+  internally Python handles it as the sequence ["P", "a", "r", "r", "o", "t"].</p>
+<p>The first indexer value is always the number zero. Hence, to have access to the 
+letter P,  you need to say "Parrot"[0]  and to access the letter a,
+  you need to say "Parrot"[1].  Using the same concept, we can get access 
+  to all the other elements. The following is an example of string operators:</p> 
+<code> >>> "dead parrot " + "sketch" </code>
+ <code> # concatenation "dead parrot sketch" >>> "parrot " * 2 </code>            
+ <code> # repetition "parrot parrot" >>> "parrot"[1]   </code>             
+ <code># indexing "a" >>> "parrot"[-1]  </code>
+ <code># indexing backward "t" >>> "parrot"[1:3]</code>             
+ <code> # slicing (*) "ar"</code>
+
+ <p>The following functions are always available when you load the Python 
+ interpreter. You don't need to import them because they are already part 
+ of the __builtin__  module, which is always imported when you launch Python. 
+ apply()  It executes a given function,  passing the arguments provided.
+  basic syntax: apply(function, (tuple of positional arguments) 
+  [, dictionary of keywords arguments])</p>
+   <code> >>> apply (raise_salary, (6000), {'employee':'John', 'id':13})</code>
+    <p>Note that starting at Python 1.6, the functionality of apply 
+     is now available with normal function calling, such as</p> 
+  <code>   >>> args = (6000,) >>> kwargs = { 'employee':'John', 'id':13} </code>
+   <code>  >>> raise_salary(*args, **kwargs) coerce()</code>
+      <p> coerce  is used to try to convert the two given arguments x 
+        and y  to the same type, returning them as a tuple. basic syntax:</p>
+       <code>  coerce(  x, y  )  >>> coerce(42,5.4)  (42.0, 5.4) filter()  </code> 
+       <p> It creates a new list by taking each element of list  for which
+           function  evaluates to true.  basic syntax:
+            filter(  function, list  )  >>> a = range (4)</p>
+       <code>      >>> b = filter(lambda x: x < 3, a)</code>
+     <code>         >>> print b [0,1,2] globals() </code>
+               <p>It returns the global namespace dictionary. basic syntax:</p>
+         <code>       globals()  input()  </code>
+ <p>It provides an input interface for the user. 
+ Only numbers are accepted. basic syntax: </p>
+<code>put(  [prompt]  )  a = input("Please, type a number greater than 5: ")</code>
+<code>  if a<5:     print "a is not greater than 5" locals()  </code>
+  <p>It returns the local namespace dictionary basic syntax:</p>
+ <code>  locals()  map() </code>
+    <p>It applies a function  to each element of list,  producing another list.
+     If function  is set to None  and multiple lists are provided, a tuple 
+     matrix is generated in the format of a list. basic syntax: </p>
+ <code>    map(  function, list  )  >>> lst = map(None, [1,2,3,4], [1,2,3,4,5,6])
+      >>> lst [(1, 1), (2, 2), (3, 3), (4, 4), (None, 5), (None, 6)] open() </code>
+<p>It opens a file. (See the section "File Handling" for details.) basic syntax:</P>
+ <code>open(  filename [,mode [,bufsize]]  )  pow() </code>
+  <p>It returns x**y  or (x**y) % z,  depending on the number of arguments 
+  that are transported.basic syntax:</p>
+ <code>  pow(  x, y [,z]  )  raw_input() </code>
+    <p>It reads from standard input ( sys.stdin ), returning the read data as 
+    a string. prompt  is an optional text that can be displayed in the screen. 
+    basic syntax: </p>
+  <code>  raw_input(  [prompt]  )  reduce() </code>
+   <p>It applies a function
+      cumulatively to the items in sequence  (implied loop), returning a single
+       value. initializer  is an optional starting value. basic syntax:</p>
+    <code>    reduce(  function, sequence [,initializer]  )</code>
+          <p>>>> import operator >>> a = [1,2,3] >>> print reduce(operator.add, a)
+     6 The equivalent Python code for this function is something like def
+      reduce(func, list):     ret = list[0]     for x in list[1:]:        </p>
+     <code>  ret = func(ret, x)     return ret __import__() </code>
+ <p>This is a function invoked by the import statement. To import a module, you 
+ just need to inform the module name.  basic syntax:</p>
+ <code> __import__(  module_name [,globals() [, locals() [,from list]]]  )
+    >>> modname = "string" >>> string = __import__(modname) >>> string reload()</code>
+<p>It reloads an already imported module.  Internally, it calls the __import__  
+function. basic syntax:</p><code> reload(  module  )  </code>
+
+
+
+<p>Python implements a variety of data structures, such as lists, tuples, ranges,
+ and dictionaries (also known as hash tables ).</p>
+ 
+  <p>Lists </p>
+ <p> Lists are mutable 
+ sequences of objects indexed by natural numbers that can be changed after 
+ they are created. Lists are very flexible and easy to create. 
+ They are always enclosed in brackets:</p>
+  <code> >>> lst = [1,2,3,4]</code> <p> # this is simple list</p>
+
+  <p>Ranges A range is an actual list of integers. The built-in 
+   function range()  provides this data structure.</p>
+   <code> >>> r = range(2,5) </code>
+   <code>>>> print r</code>
+    <code>[2,3,4]</code>
+    <p>When the first argument is left out, it is assumed to be zero.</p>
+
+
+<p>Tuples </p>
+<p>A tuple is a sequence of immutable Python objects. 
+The general syntax of a tuple is as follows: variable =</p>
+<code> (element1, element2, …)</code>
+
+
+
+
+
+<p>Dictionaries ( hash tables )</p>
+<p> Dictionaries illustrate the only mapping type 
+of Python. They represent finite sets of objects indexed by nearly arbitrary 
+values. I say nearly  because dictionary keys cannot be variables of mutable 
+type, which are compared by value rather than by object identity. 
+Python dictionaries are also known as associative arrays  or hash tables.
+  The general syntax of a dictionary is as follows: variable =</p>
+   <code>{" key1 ":" value1 ", " key2 ":" value2 ", …} </code>
+   <p>Dictionaries are always enclosed in braces. They associate key  
+   elements with value  elements—keys and values are displayed separated 
+   by a colon. The values of a dictionary can be of any type, but the keys 
+   must be of an immutable data type (such as strings, numbers, or tuples). 
+   Dictionary keys have no natural order and are always listed in arbitrary 
+   order because it uses a hash  technique to implement a fast lookup.</p>
